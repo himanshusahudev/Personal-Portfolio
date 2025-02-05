@@ -1,6 +1,6 @@
 'use client'
 import React, { useState, useEffect } from 'react';
-import { Github, ExternalLink } from 'lucide-react';
+import { Github, ExternalLink, Linkedin, Twitter } from 'lucide-react';
 
 const Portfolio = () => {
   const [activeSection, setActiveSection] = useState('about');
@@ -45,28 +45,28 @@ const Portfolio = () => {
   ];
 
   const ProjectSection = ({ title, projects }: { title: string; projects: { title: string; description: string; tech: string[]; link: string }[] }) => (
-    <div className="mb-7">
+    <div className="mb-20">
       <p className="text-neutral-500 mb-8 text-sm tracking-wider">{title}</p>
       <div className="grid gap-16">
         {projects.map((project, index) => (
           <div
             key={index}
-            className="group relative py-8 border-t border-neutral-800 cursor-pointer bg-neutral-900 p-6 rounded-lg shadow-md"
+            className="group relative py-4 border-t border-neutral-800 cursor-pointer bg-neutral-900 p-4 rounded-lg shadow-md"
           >
             <div className="absolute inset-0 bg-neutral-900/50 opacity-0 group-hover:opacity-100 transition-opacity rounded-lg" />
             <div className="relative">
-              <h2 className="text-2xl font-semibold text-white mb-2">{project.title}</h2>
-              <p className="text-lg font-light text-neutral-400 mb-4">{project.description}</p>
-              <div className="flex space-x-4">
+              <h2 className="text-xl font-semibold text-white mb-2">{project.title}</h2>
+              <p className="text-base font-light text-neutral-400 mb-2">{project.description}</p>
+              <div className="flex space-x-2">
                 {project.tech.map((tech, i) => (
-                  <span key={i} className="text-sm text-neutral-500 bg-neutral-800 px-2 py-1 rounded-full">
+                  <span key={i} className="text-xs text-neutral-500 bg-neutral-800 px-1 py-0.5 rounded-full">
                     {tech}
                   </span>
                 ))}
               </div>
               <ExternalLink
-                className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity"
-                size={20}
+                className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity"
+                size={16}
               />
             </div>
           </div>
@@ -89,7 +89,7 @@ const Portfolio = () => {
     <div className={`min-h-screen bg-black text-neutral-200 selection:bg-neutral-800 selection:text-white
       ${isLoading ? 'blur-lg' : 'blur-0'} transition-all duration-1000`}>
       {/* Navigation and About sections remain the same */}
-      <nav className={`fixed top-0 left-0 right-0 px-6 py-8 bg-black/80 backdrop-blur-md z-50
+      <nav className={`px-6 py-8 bg-black/80 backdrop-blur-md z-50
         transition-all duration-1000 ${isLoading ? 'opacity-0 -translate-y-4 blur-lg' : 'opacity-100 translate-y-0 blur-0'}`}>
         <div className="max-w-xl mx-auto flex justify-center space-x-12">
           <a
@@ -120,7 +120,7 @@ const Portfolio = () => {
       </nav>
 
       {/* About Section */}
-      <section id="about" className={`min-h-screen flex items-center px-6 transition-all duration-1000 delay-300
+      <section id="about" className={`flex items-center py-4 px-6 transition-all duration-1000 delay-300
         ${isLoading ? 'opacity-0 translate-y-4 blur-lg' : 'opacity-100 translate-y-0 blur-0'}`}>
         <div className="max-w-5xl mx-auto">
           <div className="max-w-2xl">
@@ -154,6 +154,22 @@ const Portfolio = () => {
         </div>
       </section>
 
+      {/* Social Links Section */}
+      <section id="social" className={`py-7 px-6 transition-all duration-1000 delay-500
+        ${isLoading ? 'opacity-0 translate-y-4 blur-lg' : 'opacity-100 translate-y-0 blur-0'}`}>
+        <div className="max-w-5xl mx-auto flex justify-center space-x-12">
+          <a href="https://github.com/yourusername" className="text-neutral-500 hover:text-white transition-colors">
+            <Github size={20} />
+          </a>
+          <a href="https://linkedin.com/in/yourusername" className="text-neutral-500 hover:text-white transition-colors">
+            <Linkedin size={20} />
+          </a>
+          <a href="https://twitter.com/yourusername" className="text-neutral-500 hover:text-white transition-colors">
+            <Twitter size={20} />
+          </a>
+        </div>
+      </section>
+
       {/* Work Section */}
       <section id="work" className={`min-h-screen px-6 transition-all duration-1000 delay-500
         ${isLoading ? 'opacity-0 translate-y-4 blur-lg' : 'opacity-100 translate-y-0 blur-0'}`}>
@@ -164,7 +180,7 @@ const Portfolio = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className={`min-h-screen py-7 px-6 transition-all duration-1000 delay-700
+      <section id="contact" className={`py-7 px-6 transition-all duration-1000 delay-700
         ${isLoading ? 'opacity-0 translate-y-4 blur-lg' : 'opacity-100 translate-y-0 blur-0'}`}>
         <div className="max-w-5xl mx-auto">
           <div className="max-w-2xl">
