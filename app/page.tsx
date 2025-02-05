@@ -47,13 +47,12 @@ const Portfolio = () => {
   const ProjectSection = ({ title, projects }: { title: string; projects: { title: string; description: string; tech: string[]; link: string }[] }) => (
     <div className="mb-20">
       <p className="text-neutral-500 mb-8 text-sm tracking-wider">{title}</p>
-      <div className="grid gap-16">
+      <div className="space-y-8">
         {projects.map((project, index) => (
           <div
             key={index}
-            className="group relative py-4 border-t border-neutral-800 cursor-pointer bg-neutral-900 p-4 rounded-lg shadow-md"
+            className="group relative cursor-pointer"
           >
-            <div className="absolute inset-0 bg-neutral-900/50 opacity-0 group-hover:opacity-100 transition-opacity rounded-lg" />
             <div className="relative">
               <h2 className="text-xl font-semibold text-white mb-2">{project.title}</h2>
               <p className="text-base font-light text-neutral-400 mb-2">{project.description}</p>
