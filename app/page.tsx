@@ -3,13 +3,13 @@ import React, { useState, useEffect } from 'react';
 import { Github, ExternalLink, Linkedin, Twitter } from 'lucide-react';
 
 const Portfolio = () => {
-  const [activeSection, setActiveSection] = useState('about');
+  const [activeSection] = useState('about');
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 1000);
+    }, 300);
 
     return () => clearTimeout(timer);
   }, []);
@@ -86,7 +86,7 @@ const Portfolio = () => {
 
   return (
     <div className={`min-h-screen bg-black text-neutral-200 selection:bg-neutral-800 selection:text-white
-      ${isLoading ? 'blur-lg' : 'blur-0'} transition-all duration-1000`}>
+      ${isLoading ? 'blur-lg' : 'blur-0'} transition-all duration-300`}>
       {/* Navigation and About sections remain the same */}
       <nav className={`px-6 py-8 bg-black/80 backdrop-blur-md z-50
         transition-all duration-1000 ${isLoading ? 'opacity-0 -translate-y-4 blur-lg' : 'opacity-100 translate-y-0 blur-0'}`}>
@@ -186,7 +186,7 @@ const Portfolio = () => {
             <p className="text-neutral-500 mb-4 text-sm tracking-wider">GET IN TOUCH</p>
             <p className="text-xl font-light leading-relaxed mb-8">
               Currently available for freelance projects and full-time opportunities.
-              Let's build something great together.
+              Let&apos;s build something great together.
             </p>
             <a
               href="mailto:hello@example.com"
