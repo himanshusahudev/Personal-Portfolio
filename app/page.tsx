@@ -208,7 +208,7 @@ const Portfolio = () => {
           <p className="text-neutral-500 mb-4 text-sm tracking-wider">GET IN TOUCH</p>
           <p className="text-xl font-light leading-relaxed mb-8">
             Currently available for freelance projects and full-time opportunities.
-            Let's build something great together.
+            Let&apos;s build something great together.
           </p>
           <a
             href="mailto:himanshusahudev@gmail.com"
